@@ -37,24 +37,24 @@ func Insert(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func converterParaFloat64(preco string) float64 {
-	precoConvertidoParaFloat, err := strconv.ParseFloat(preco, 64)
+func converterParaFloat64(valor string) float64 {
+	valorConvertido, err := strconv.ParseFloat(valor, 64)
 
 	if err != nil {
-		log.Println("Erro na conversão do preço", err)
+		log.Println("Erro na conversão para float64", err)
 	}
 
-	return precoConvertidoParaFloat
+	return valorConvertido
 }
 
-func converterParaInt(quantidade string) int {
-	quantidadeConvertidoParaInt, err := strconv.Atoi(quantidade)
+func converterParaInt(valor string) int {
+	valorConvertido, err := strconv.Atoi(valor)
 
 	if err != nil {
-		log.Println("Erro na conversão do quantidade", err)
+		log.Println("Erro na conversão para inteiro", err)
 	}
 
-	return quantidadeConvertidoParaInt
+	return valorConvertido
 }
 
 func Delete(w http.ResponseWriter, r *http.Request) {
